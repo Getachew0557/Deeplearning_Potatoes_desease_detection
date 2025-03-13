@@ -3,31 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Classification</title>
+    <title>Potato Disease Detection</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Upload an Image for Potato Disease Classification</h1>
-        
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <h1>Potato Detect</h1>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section class="hero">
+            <h2>Potato Disease Detection</h2>
+            <p>Upload an image of your potato plant to detect diseases and get expert recommendations!</p>
+        </section>
+
         {% if error %}
-            <p class="error">{{ error }}</p>
+            <div class="alert error">{{ error }}</div>
         {% endif %}
 
-        <form action="/" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" required>
-            <button type="submit">Predict</button>
-        </form>
+        <div class="form-container">
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" id="file-upload" class="upload-input" required>
+                <button type="submit" class="submit-btn">Detect Disease</button>
+            </form>
+        </div>
 
         {% if prediction %}
-            <h2>Prediction: {{ prediction }}</h2>
-            <p>Confidence: {{ confidence | round(2) }}</p>
-        {% endif %}
+            <div class="result-container">
+                <h3>Prediction: <span class="prediction">{{ prediction }}</span></h3>
+                <p>Confidence: <span class="confidence">{{ confidence | round(2) }}</span></p>
 
-        {% if recommendation %}
-            <h3>Recommendation:</h3>
-            <p>{{ recommendation }}</p>
+                {% if recommendation %}
+                    <div class="recommendation-container">
+                        <h4>Recommendation:</h4>
+                        <p>{{ recommendation }}</p>
+                    </div>
+                {% endif %}
+            </div>
         {% endif %}
-    </div>
+    </main>
+
+    <footer>
+        <p>Powered by Potato Disease Detection System</p>
+    </footer>
 </body>
 </html>

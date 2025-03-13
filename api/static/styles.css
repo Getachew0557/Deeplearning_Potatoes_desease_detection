@@ -1,33 +1,216 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: auto;
+/* Navbar Styles */
+.navbar {
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5rem; /* Added left and right padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.navbar-logo h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.navbar-links li {
+    margin-left: 2rem;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #FFD700;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #fff;
+    padding: 3rem 4rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 3rem;
     color: #333;
 }
 
-.error {
-    color: red;
+.hero p {
+    font-size: 1.4rem;
+    color: #777;
 }
 
-button {
-    background-color: #28a745;
+/* Form Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.upload-input {
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 1rem;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
     color: white;
-    padding: 10px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Result & Prediction Styles */
+.result-container {
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    text-align: center;
+}
+
+.prediction {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.confidence {
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.recommendation-container {
+    margin-top: 20px;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 6rem;
+    background-color: #fff;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.about-image {
+    width: 600px;
+    height: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.about-text {
+    max-width: 600px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Contact Form */
+.contact-section {
+    padding: 4rem 10rem;
+    background-color: #fff;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1.5rem 4rem;
+    text-align: center;
+    margin-top: auto; /* Ensures footer stays at bottom */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
 }
