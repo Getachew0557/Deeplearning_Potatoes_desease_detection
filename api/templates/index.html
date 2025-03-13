@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Upload an Image for Classification</h1>
+        <h1>Upload an Image for Potato Disease Classification</h1>
         
         {% if error %}
             <p class="error">{{ error }}</p>
@@ -22,6 +22,11 @@
         {% if prediction %}
             <h2>Prediction: {{ prediction }}</h2>
             <p>Confidence: {{ confidence | round(2) }}</p>
+        {% endif %}
+
+        {% if recommendation %}
+            <h3>Recommendation:</h3>
+            <p>{{ recommendation }}</p>
         {% endif %}
     </div>
 </body>
