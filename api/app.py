@@ -6,6 +6,9 @@ import os
 import requests
 import logging
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
 
