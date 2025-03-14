@@ -4,6 +4,10 @@ from tensorflow import keras
 from PIL import Image
 import os
 import requests
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)
 
@@ -19,8 +23,8 @@ CLASS_NAMES = [
 
 CONFIDENCE_THRESHOLD = 0.6  # Define a threshold for classification
 
-# Weather API Key and URL
-API_KEY = 'your_openweathermap_api_key'
+# Weather API Key and URL (replace with actual API key)
+API_KEY = os.getenv('OPENWEATHERMAP_API_KEY', 'your_actual_openweathermap_api_key')
 WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather'
 
 def preprocess_image(image):
@@ -81,7 +85,8 @@ def index():
             return render_template("index.html", prediction=predicted_class, confidence=max_prob, recommendation=recommendation)
         
         except Exception as e:
-            return render_template("index.html", error=str(e))
+            logging.error(f"Error occurred: {str(e)}")
+            return render_template("index.html", error="An error occurred. Please try again.")
 
     return render_template("index.html")
 
